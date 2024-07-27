@@ -9,3 +9,8 @@ print(products)
 
 for p in products:
     print(p[0],'的價格為',p[1])
+#寫入檔案
+with open('products.csv','w',encoding='utf-8') as my_file : #with可以自動close()
+    my_file.write('商品,價格\n')
+    for p in products:
+        my_file.write(p[0]+','+p[1]+'\n') #寫入
